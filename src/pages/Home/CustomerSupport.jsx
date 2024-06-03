@@ -2,7 +2,7 @@ const CustomerSupport = () => {
   return (
     <div className="flex flex-col lg:flex-row justify-between items-center h-screen bg-white p-4 lg:p-10">
       <div className="flex-1 flex justify-center items-center p-4 lg:p-10">
-        <div className="bg-white p-6 lg:p-10 rounded-lg .shadow-lg text-center max-w-md w-full">
+        <div className="bg-white p-6 lg:p-10 rounded-lg  text-center max-w-md w-full">
           <h2 className="text-3xl lg:text-4xl font-bold mb-4">
             <span className="text-orange-500">24/7</span> at your service
           </h2>
@@ -50,7 +50,7 @@ const CustomerSupport = () => {
             alt="support"
           />
           <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
-            <div className="bg-white rounded-full p-2 lg:p-5 .shadow-lg">
+            <div className="bg-white rounded-full p-2 lg:p-5 shadow-lg">
               <div className="w-10 h-10 lg:w-20 lg:h-20 rounded-full bg-orange-100 flex items-center justify-center">
                 <img
                   className="w-8 h-8 lg:w-16 lg:h-16 rounded-full"
