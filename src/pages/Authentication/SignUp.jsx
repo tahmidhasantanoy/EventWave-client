@@ -4,7 +4,6 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FcGoogle } from "react-icons/fc";
-// import Swal from "sweetalert2";
 
 const SignUp = () => {
   const [cpass, setCpass] = useState("");
