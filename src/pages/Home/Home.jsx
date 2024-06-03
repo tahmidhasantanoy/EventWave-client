@@ -1,6 +1,9 @@
+import CustomerSupport from "./CustomerSupport";
 
 const Home = () => {
-  return <div>Home</div>;
+  return <>
+    <CustomerSupport/>
+  </>;
 };
 
 export default Home;
