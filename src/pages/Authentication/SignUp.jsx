@@ -8,7 +8,7 @@ import { FcGoogle } from "react-icons/fc";
 const SignUp = () => {
   const [cpass, setCpass] = useState("");
   const { register, handleSubmit } = useForm();
-  const { createUser } = useContext(AuthContext);
+  const { createUser, googleLogin } = useContext(AuthContext);
   console.log(createUser);
 
   const onSubmit = (data) => {
@@ -30,9 +30,13 @@ const SignUp = () => {
     }
   };
 
+  const handleGoogleLogin = () => {
+    googleLogin();
+  };
+
   return (
-    <div className="hero min-h-screen bg-base-200 relative">
-      <div className="absolute">
+    <div className="hero min-h-screen bg-base-200">
+      <div className=".absolute">
         <ToastContainer />;
       </div>
       <div className="hero-content flex-col lg:flex-row-reverse">
@@ -44,7 +48,7 @@ const SignUp = () => {
             a id nisi.
           </p>
         </div>
-        <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+        <div className=".card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mb-0 pb-0">
           <form onSubmit={handleSubmit(onSubmit)} className="card-body">
             <div className="form-control">
               <label className="label">
@@ -90,18 +94,20 @@ const SignUp = () => {
                 className="input input-bordered"
               />
             </div>
-            <div className="form-control flex items-center">
-              <button
-                /* onClick={handleGoogleLogin} */ className="btn btn-circle"
-              >
-                <FcGoogle />
-              </button>
-            </div>
+
             {cpass && <p>{cpass}</p>}
             <div className="form-control mt-6">
               <button className="btn btn-primary">Register</button>
             </div>
           </form>
+          <div className="form-control mt-6 card-body">
+            <button
+              onClick={handleGoogleLogin}
+              className="btn btn-outline btn-primary"
+            >
+              <FcGoogle className="h-10 w-10" />
+            </button>
+          </div>
         </div>
       </div>
     </div>
