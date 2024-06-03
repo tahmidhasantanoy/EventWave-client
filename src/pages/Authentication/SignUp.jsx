@@ -1,12 +1,12 @@
-import { /* useContext, */ useState } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-// import { AuthContext } from "../../Providers/AuthProvider";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const SignUp = () => {
   const [cpass, setCpass] = useState("");
   const { register, handleSubmit } = useForm();
-  //   const { createUser } = useContext(AuthContext);
-  //   console.log(createUser);
+  const { createUser } = useContext(AuthContext);
+  console.log(createUser);
 
   const onSubmit = (data) => {
     const { username, email, password, cpassword } = data;
@@ -17,12 +17,12 @@ const SignUp = () => {
     } else {
       setCpass("");
 
-      //   createUser(email, password)
-      //     .then((res) => {
-      //       const user = res.user;
-      //       console.log(user);
-      //     })
-      //     .catch((err) => console.log(err));
+      createUser(email, password)
+        .then((res) => {
+          const user = res.user;
+          console.log(user);
+        })
+        .catch((err) => console.log(err));
     }
   };
 
