@@ -1,6 +1,10 @@
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { FcGoogle } from "react-icons/fc";
+// import Swal from "sweetalert2";
 
 const SignUp = () => {
   const [cpass, setCpass] = useState("");
@@ -21,13 +25,17 @@ const SignUp = () => {
         .then((res) => {
           const user = res.user;
           console.log(user);
+          toast.success("Done");
         })
-        .catch((err) => console.log(err));
+        .catch((err) => toast.error(err.message));
     }
   };
 
   return (
-    <div className="hero min-h-screen bg-base-200">
+    <div className="hero min-h-screen bg-base-200 relative">
+      <div className="absolute">
+        <ToastContainer />;
+      </div>
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left">
           <h1 className="text-5xl font-bold">Register now!</h1>
@@ -82,6 +90,13 @@ const SignUp = () => {
                 placeholder="Confirm password"
                 className="input input-bordered"
               />
+            </div>
+            <div className="form-control flex items-center">
+              <button
+                /* onClick={handleGoogleLogin} */ className="btn btn-circle"
+              >
+                <FcGoogle />
+              </button>
             </div>
             {cpass && <p>{cpass}</p>}
             <div className="form-control mt-6">
