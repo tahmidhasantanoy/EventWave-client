@@ -25,13 +25,45 @@ const SignUp = () => {
           const user = res.user;
           console.log(user);
           toast.success("Done");
+
+          const userInfo = {
+            name: username,
+            email: user?.email,
+          };
+
+          fetch("http://localhost:3000/user-info", {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(userInfo),
+          })
+            .then((res) => res.json())
+            .then((data) => console.log(data));
         })
         .catch((err) => toast.error(err.message));
     }
   };
 
   const handleGoogleLogin = () => {
-    googleLogin();
+    googleLogin().then((data) => {
+      console.log(data);
+
+      const userInfo = {
+        name: data?.user?.displayName,
+        email: data?.user?.email,
+      };
+
+      fetch("http://localhost:3000/user-info", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(userInfo),
+      })
+        .then((res) => res.json())
+        .then((data) => console.log(data));
+    });
   };
 
   return (

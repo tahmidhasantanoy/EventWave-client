@@ -1,21 +1,20 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const { register, handleSubmit } = useForm();
-const {login} = useContext(AuthContext)
-
+  const { login } = useContext(AuthContext);
 
   const onSubmit = (data) => {
     console.log(data);
 
-    const {email,password} = data
+    const { email, password } = data;
 
-    login(email,password)
-    .then(res => console.log(res)
-    .catch(err => console.log(err.message))
-    )
+    login(email, password).then((res) =>
+      console.log(res).catch((err) => console.log(err.message))
+    );
   };
   return (
     <div className="hero min-h-screen bg-base-200">
@@ -59,6 +58,14 @@ const {login} = useContext(AuthContext)
                 </a>
               </label>
             </div>
+            {/*  */}
+            <p className="">
+              Don't have an account?{" "}
+              <Link to={"/signup"} className="underline text-red-600">
+                Register here
+              </Link>
+            </p>
+            {/*  */}
             <div className="form-control mt-6">
               <button className="btn btn-primary">Login</button>
             </div>
