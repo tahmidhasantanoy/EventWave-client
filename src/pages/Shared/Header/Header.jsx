@@ -40,7 +40,7 @@ const Header = () => {
               {currentUser ? (
                 <>
                   <li>
-                    <Link to="/mytoys">Add Event</Link>
+                    <Link to={`/add-event`}>Add Event</Link>
                   </li>
                   <li>
                     <Link to="/addtoys">Update Event</Link>
@@ -52,9 +52,7 @@ const Header = () => {
             </ul>
           </div>
           <Link to="/" className="btn">
-            <div className="btn normal-case text-xl">
-              EventWave
-            </div>
+            <div className="btn normal-case text-xl">EventWave</div>
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -68,7 +66,7 @@ const Header = () => {
             {currentUser ? (
               <>
                 <li>
-                  <Link to="/mytoys">Add Event</Link>
+                  <Link to={`/add-event`}>Add Event</Link>
                 </li>
                 <li>
                   <Link to="/addtoys">Update Event</Link>

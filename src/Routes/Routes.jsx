@@ -5,6 +5,7 @@ import Login from "../pages/Authentication/Login";
 import SignUp from "../pages/Authentication/SignUp";
 import ViewProfile from "../pages/Authentication/ViewProfile";
 import ProfileEdit from "../pages/Authentication/EditProfile";
+import AddEvent from "../pages/Event/AddEvent";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "/edit-profile",
         element: <ProfileEdit />,
+      },
+      {
+        path: "/add-event",
+        element: <AddEvent />,
       },
     ],
   },
