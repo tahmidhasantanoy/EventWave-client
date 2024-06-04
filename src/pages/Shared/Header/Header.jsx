@@ -61,7 +61,7 @@ const Header = () => {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/alltoys">All Events</Link>
+              <Link to={`/all-events`}>All Events</Link>
             </li>
             {currentUser ? (
               <>
@@ -69,7 +69,7 @@ const Header = () => {
                   <Link to={`/add-event`}>Add Event</Link>
                 </li>
                 <li>
-                  <Link to="/addtoys">Update Event</Link>
+                  <Link to={`/update-event`}>Update Event</Link>
                 </li>
               </>
             ) : (

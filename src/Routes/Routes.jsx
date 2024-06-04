@@ -6,6 +6,9 @@ import SignUp from "../pages/Authentication/SignUp";
 import ViewProfile from "../pages/Authentication/ViewProfile";
 import ProfileEdit from "../pages/Authentication/EditProfile";
 import AddEvent from "../pages/Event/AddEvent";
+import AllEvents from "../pages/Event/AllEvents";
+import UpdateEvent from "../pages/Event/UpdateEvent";
+import UpdateSingleEvent from "../pages/Event/UpdateSingleEvent";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +38,23 @@ const router = createBrowserRouter([
       {
         path: "/add-event",
         element: <AddEvent />,
+      },
+      {
+        path: "/all-events",
+        element: <AllEvents />,
+      },
+      {
+        path: "/update-event",
+        element: <UpdateEvent />,
+        loader: () => fetch(`http://localhost:3000/event-info`),
+      },
+      {
+        // /update-single-event/${_id}
+        path: "/update-single-event/:id",
+        element: <UpdateSingleEvent />,
+        loader: ({ params }) => {
+          return fetch(`http://localhost:3000/get-single-event/${params.id}`);
+        },
       },
     ],
   },
