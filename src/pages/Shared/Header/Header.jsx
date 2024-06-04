@@ -1,12 +1,9 @@
-import { useContext } from "react";
-// import logo from "../../../../public/imgaes/logo/web-logo.png";
-// import p1 from "../../../../public/imgaes/logo/p1.jpg";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../../Providers/AuthProvider";
 import Profile from "./Profile";
+import useAuth from "../../../Hooks/useAuth";
 
 const Header = () => {
-  const { currentUser } = useContext(AuthContext);
+  const { currentUser } = useAuth();
   console.log(currentUser);
 
   return (
@@ -56,7 +53,6 @@ const Header = () => {
           </div>
           <Link to="/" className="btn">
             <div className="btn normal-case text-xl">
-              {/* <img className="w-36" src="" alt="" /> */}
               EventWave
             </div>
           </Link>

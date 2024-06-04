@@ -1,17 +1,17 @@
 import { VscAccount } from "react-icons/vsc";
 import { IoMenu } from "react-icons/io5";
 import { Link } from "react-router-dom";
-import { useContext, useState } from "react";
-import { AuthContext } from "../../../Providers/AuthProvider";
+import useAuth from "../../../Hooks/useAuth";
+import { useState } from "react";
 
 const Profile = () => {
   const [isOpen, setisOpen] = useState(false);
-  const { logOut } = useContext(AuthContext);
+  const { currentUser, logOut } = useAuth();
+  console.log(currentUser?.email);
 
   const handleLogout = () => {
-    logOut()
-    .then((res) => console.log(res)
-    .catch((err) => console.log(err.message))
+    logOut().then((res) =>
+      console.log(res).catch((err) => console.log(err.message))
     );
   };
 
@@ -27,13 +27,10 @@ const Profile = () => {
       </div>
       {isOpen && (
         <div className="absolute text-zinc-700 bg-white right-0 gap-4 w-32 rounded-lg py-3">
-          <Link>
+          <Link to={`/profile/${currentUser?.email}`}>
             <p className="py-1 hover:bg-zinc-200 pl-4">Profile</p>
           </Link>
-          <Link>
-            <p className="py-1 hover:bg-zinc-200 pl-4">View Profile</p>
-          </Link>
-          <Link>
+          <Link to={"/edit-profile"}>
             <p className="py-1 hover:bg-zinc-200 pl-4">Edit Profile</p>
           </Link>
           <Link onClick={handleLogout}>
