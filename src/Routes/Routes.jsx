@@ -10,6 +10,7 @@ import AllEvents from "../pages/Event/AllEvents";
 import UpdateEvent from "../pages/Event/UpdateEvent";
 import UpdateSingleEvent from "../pages/Event/UpdateSingleEvent";
 import DetailEvent from "../pages/Event/DetailEvent";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -33,7 +34,6 @@ const router = createBrowserRouter([
         element: <ViewProfile />,
       },
       {
-        // /edit-profile/${_id}
         path: "/edit-profile/:id",
         element: <ProfileEdit />,
         loader: ({ params }) => {
@@ -42,11 +42,17 @@ const router = createBrowserRouter([
       },
       {
         path: "/add-event",
-        element: <AddEvent />,
+        element: (
+          <PrivateRoute>
+            <AddEvent />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/all-events",
-        element: <AllEvents />,
+        element: <PrivateRoute>
+          <AllEvents />
+        </PrivateRoute>,
       },
       {
         path: "/update-event",

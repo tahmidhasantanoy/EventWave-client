@@ -100,9 +100,11 @@ const ProfileEdit = () => {
               className="input input-bordered w-full"
             />
           </div>
-          <button type="submit" className="btn btn-primary">
-            Submit
+          <div className=" flex justify-center mt-5">
+          <button type="submit" className="btn text-center btn-primary">
+            Udate
           </button>
+          </div>
         </form>
       </div>
     </div>

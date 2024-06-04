@@ -14,10 +14,7 @@ const UpdateEvents = () => {
     <div>
       <h3 className="text-center">Events</h3>
       {events.map((item, index) => (
-        <>
-          <SingleEvent key={index} event={item}></SingleEvent>
-          {/* <UpdateSingleEvent key={index} event={item}></UpdateSingleEvent> */}
-        </>
+        <SingleEvent key={index} event={item}></SingleEvent>
       ))}
     </div>
   );
