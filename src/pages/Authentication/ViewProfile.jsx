@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import useAuth from "../../Hooks/useAuth";
+import { Link } from "react-router-dom";
 
 const ViewProfile = () => {
   const { currentUser } = useAuth();
   const [userData, setUserData] = useState({});
-  const { name, email } = userData;
+  const { _id, name, email } = userData;
+  console.log(userData);
 
   useEffect(() => {
     fetch(`http://localhost:3000/user-data/${currentUser?.email}`)
@@ -26,8 +28,9 @@ const ViewProfile = () => {
         <p>Email: {email}</p>
         <p>Role: {"role"}</p>
         <div className="card-actions justify-end">
-          <button className="btn btn-primary">Edit</button>
-          <button className="btn btn-secondary">Delete</button>
+          <button className="btn btn-primary">
+            <Link to={`/edit-profile/${_id}`}>Edit</Link>
+          </button>
         </div>
       </div>
     </div>

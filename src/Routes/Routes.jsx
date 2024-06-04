@@ -9,6 +9,7 @@ import AddEvent from "../pages/Event/AddEvent";
 import AllEvents from "../pages/Event/AllEvents";
 import UpdateEvent from "../pages/Event/UpdateEvent";
 import UpdateSingleEvent from "../pages/Event/UpdateSingleEvent";
+import DetailEvent from "../pages/Event/DetailEvent";
 
 const router = createBrowserRouter([
   {
@@ -32,8 +33,12 @@ const router = createBrowserRouter([
         element: <ViewProfile />,
       },
       {
-        path: "/edit-profile",
+        // /edit-profile/${_id}
+        path: "/edit-profile/:id",
         element: <ProfileEdit />,
+        loader: ({ params }) => {
+          return fetch(`http://localhost:3000/update-user-data/${params.id}`);
+        },
       },
       {
         path: "/add-event",
@@ -52,6 +57,13 @@ const router = createBrowserRouter([
         // /update-single-event/${_id}
         path: "/update-single-event/:id",
         element: <UpdateSingleEvent />,
+        loader: ({ params }) => {
+          return fetch(`http://localhost:3000/get-single-event/${params.id}`);
+        },
+      },
+      {
+        path: "/detail-event/:id",
+        element: <DetailEvent />,
         loader: ({ params }) => {
           return fetch(`http://localhost:3000/get-single-event/${params.id}`);
         },

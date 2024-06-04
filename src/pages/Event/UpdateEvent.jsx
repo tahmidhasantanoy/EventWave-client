@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import SingleEvent from "./SingleEvent";
+// import SingleEvent from "./SingleEvent";
 import SeeAllEventForUpdate from "./SeeAllEventForUpdate";
 
 // UpdateEvent -> UpdateSingleEvent
