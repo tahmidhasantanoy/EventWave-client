@@ -50,9 +50,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/all-events",
-        element: <PrivateRoute>
-          <AllEvents />
-        </PrivateRoute>,
+        element: <AllEvents />,
       },
       {
         path: "/update-event",
@@ -69,7 +67,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/detail-event/:id",
-        element: <DetailEvent />,
+        element: (
+          <PrivateRoute>
+            <DetailEvent />
+          </PrivateRoute>
+        ),
         loader: ({ params }) => {
           return fetch(`http://localhost:3000/get-single-event/${params.id}`);
         },
