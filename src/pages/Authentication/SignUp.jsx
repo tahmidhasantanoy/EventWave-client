@@ -31,7 +31,7 @@ const SignUp = () => {
             email: user?.email,
           };
 
-          fetch("http://localhost:3000/user-info", {
+          fetch("https://event-wave-server-phi.vercel.app/user-info", {
             method: "POST",
             headers: {
               "content-type": "application/json",
@@ -54,7 +54,7 @@ const SignUp = () => {
         email: data?.user?.email,
       };
 
-      fetch("http://localhost:3000/user-info", {
+      fetch("https://event-wave-server-phi.vercel.app/user-info", {
         method: "POST",
         headers: {
           "content-type": "application/json",

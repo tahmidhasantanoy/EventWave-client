@@ -1,8 +1,10 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# EventWave
 
-Currently, two official plugins are available:
+A brief description of EventWave does :
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Authentication with firebase.](#installation)
+- [User can update their file.Along with change password](#usage)
+- [Any user can Operate CRUD operation if he/she logged in.](#components)
+- [This site contain search field.Which make user work eficient.](#routes)
+- [All the api is secure beause i use JWT](#dependencies)

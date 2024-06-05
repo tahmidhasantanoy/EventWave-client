@@ -11,7 +11,7 @@ const UpdateEventDashboard = () => {
   const handleDelete = (deletedId) => {
     console.log(deletedId);
 
-    fetch(`http://localhost:3000/all-event/${deletedId}`, {
+    fetch(`https://event-wave-server-phi.vercel.app/all-event/${deletedId}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

@@ -6,7 +6,7 @@ const UpdateEvents = () => {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/event-info")
+    fetch("https://event-wave-server-phi.vercel.app/event-info")
       .then((res) => res.json())
       .then((data) => setEvents(data));
   }, []);

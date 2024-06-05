@@ -65,7 +65,7 @@ const UpdateSingleEvent = () => {
     };
 
     //update a event data to db
-    fetch(`http://localhost:3000/single-event-info/${_id}`, {
+    fetch(`https://event-wave-server-phi.vercel.app/single-event-info/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

@@ -8,9 +8,10 @@ const ViewProfile = () => {
 
   const { _id, name, email } = userData;
 
-
   useEffect(() => {
-    fetch(`http://localhost:3000/user-data/${currentUser?.email}`)
+    fetch(
+      `https://event-wave-server-phi.vercel.app/user-data/${currentUser?.email}`
+    )
       .then((res) => res.json())
       .then((data) => setUserData(data));
   }, [currentUser]);

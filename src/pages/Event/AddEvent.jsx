@@ -66,7 +66,7 @@ const AddEvent = () => {
     };
 
     //add a event data to db
-    fetch("http://localhost:3000/event-info", {
+    fetch("https://event-wave-server-phi.vercel.app/event-info", {
       method: "POST",
       headers: {
         "content-type": "application/json",

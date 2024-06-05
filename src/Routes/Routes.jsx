@@ -41,7 +41,9 @@ const router = createBrowserRouter([
         path: "/edit-profile/:id",
         element: <ProfileEdit />,
         loader: ({ params }) => {
-          return fetch(`http://localhost:3000/update-user-data/${params.id}`);
+          return fetch(
+            `https://event-wave-server-phi.vercel.app/update-user-data/${params.id}`
+          );
         },
       },
       {
@@ -59,14 +61,17 @@ const router = createBrowserRouter([
       {
         path: "/update-event",
         element: <UpdateEvent />,
-        loader: () => fetch(`http://localhost:3000/event-info`),
+        loader: () =>
+          fetch(`https://event-wave-server-phi.vercel.app/event-info`),
       },
       {
         // /update-single-event/${_id}
         path: "/update-single-event/:id",
         element: <UpdateSingleEvent />,
         loader: ({ params }) => {
-          return fetch(`http://localhost:3000/get-single-event/${params.id}`);
+          return fetch(
+            `https://event-wave-server-phi.vercel.app/get-single-event/${params.id}`
+          );
         },
       },
       {
@@ -77,7 +82,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) => {
-          return fetch(`http://localhost:3000/get-single-event/${params.id}`);
+          return fetch(
+            `https://event-wave-server-phi.vercel.app/get-single-event/${params.id}`
+          );
         },
       },
     ],
@@ -96,7 +103,7 @@ const router = createBrowserRouter([
         loader: ({ params }) => {
           console.log(params.qemail);
           return fetch(
-            `http://localhost:3000/user-added-event/${params.qemail}`
+            `https://event-wave-server-phi.vercel.app/user-added-event/${params.qemail}`
           );
         },
       },
@@ -105,7 +112,9 @@ const router = createBrowserRouter([
         element: <DetailEventInDashboard />,
         loader: ({ params }) => {
           console.log(params.id);
-          return fetch(`http://localhost:3000/get-single-event/${params.id}`);
+          return fetch(
+            `https://event-wave-server-phi.vercel.app/get-single-event/${params.id}`
+          );
         },
       },
       {
@@ -114,7 +123,7 @@ const router = createBrowserRouter([
         loader: ({ params }) => {
           console.log(params.qemail);
           return fetch(
-            `http://localhost:3000/user-added-event/${params.qemail}`
+            `https://event-wave-server-phi.vercel.app/user-added-event/${params.qemail}`
           );
         },
       },

@@ -22,7 +22,7 @@ const ProfileEdit = () => {
     };
 
     //update a event data to db
-    fetch(`http://localhost:3000/single-user-info/${_id}`, {
+    fetch(`https://event-wave-server-phi.vercel.app/single-user-info/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -101,9 +101,9 @@ const ProfileEdit = () => {
             />
           </div>
           <div className=" flex justify-center mt-5">
-          <button type="submit" className="btn text-center btn-primary">
-            Udate
-          </button>
+            <button type="submit" className="btn text-center btn-primary">
+              Udate
+            </button>
           </div>
         </form>
       </div>
