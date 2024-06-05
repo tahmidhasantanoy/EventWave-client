@@ -1,7 +1,12 @@
 import { Link, Outlet } from "react-router-dom";
-import { FaBook, FaHistory, FaHome, FaSwatchbook } from "react-icons/fa";
+import { FaHome, FaSwatchbook } from "react-icons/fa";
+import useAuth from "../../Hooks/useAuth";
+import { MdOutlineTipsAndUpdates } from "react-icons/md";
 
 const DashBoardPage = () => {
+  const { currentUser } = useAuth();
+  console.log(currentUser?.email);
+
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -25,21 +30,15 @@ const DashBoardPage = () => {
               </Link>
             </li>
             <li>
-              <Link to={"/dashboard/AllProduct"}>
+              <Link to={`/dashboard/all-event/${currentUser?.email}`}>
                 <FaSwatchbook />
-                All Product
+                All Event
               </Link>
             </li>
             <li>
-              <Link to={"/dashboard/update-product"}>
-                <FaBook />
-                Update Product
-              </Link>
-            </li>
-            <li>
-              <Link to={"/dashboard/payment-history"}>
-                <FaHistory />
-                Payment history
+              <Link to={`/dashboard/dashboard-update-event/${currentUser?.email}`}>
+                <MdOutlineTipsAndUpdates />
+                Update Event
               </Link>
             </li>
           </>

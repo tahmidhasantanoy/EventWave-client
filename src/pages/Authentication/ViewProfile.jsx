@@ -1,12 +1,13 @@
-import { useEffect, useState } from "react";
-import useAuth from "../../Hooks/useAuth";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const ViewProfile = () => {
-  const { currentUser } = useAuth();
+  const { currentUser } = useContext(AuthContext);
   const [userData, setUserData] = useState({});
+
   const { _id, name, email } = userData;
-  console.log(userData, currentUser);
+
 
   useEffect(() => {
     fetch(`http://localhost:3000/user-data/${currentUser?.email}`)
@@ -29,7 +30,7 @@ const ViewProfile = () => {
         <p>Role: {"role"}</p>
         <div className="card-actions justify-end">
           <button className="btn btn-primary">
-            <Link to={`/edit-profile/${_id}`}>Edit</Link>
+            <Link to={`/edit-profile/${_id}`}>Edit</Link> {/* Problem here */}
           </button>
         </div>
       </div>

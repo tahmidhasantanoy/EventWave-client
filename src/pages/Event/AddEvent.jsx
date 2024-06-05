@@ -1,9 +1,11 @@
 import { useForm } from "react-hook-form";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import useAuth from "../../Hooks/useAuth";
 
 const AddEvent = () => {
   const { register, handleSubmit } = useForm();
+  const { currentUser } = useAuth();
 
   const onSubmit = (data) => {
     console.log(data);
@@ -11,6 +13,7 @@ const AddEvent = () => {
 
     const {
       eventName,
+      userEmail,
       eventDateTime,
       eventLocation,
       eventDescription,
@@ -28,6 +31,7 @@ const AddEvent = () => {
 
     console.log(
       eventName,
+      userEmail,
       eventDateTime,
       eventLocation,
       eventDescription,
@@ -45,6 +49,7 @@ const AddEvent = () => {
 
     const newEventInfo = {
       eventName,
+      userEmail,
       eventDateTime,
       eventLocation,
       eventDescription,
@@ -88,6 +93,13 @@ const AddEvent = () => {
             <input
               type="text"
               {...register("eventName")}
+              className="input input-bordered"
+            />
+            <input
+              defaultValue={currentUser?.email}
+              readOnly
+              type="email"
+              {...register("userEmail")}
               className="input input-bordered"
             />
           </div>
@@ -186,12 +198,6 @@ const AddEvent = () => {
               placeholder="Image URL"
               {...register("promotionalImages")}
               className="input input-bordered"
-            />
-            <input
-              type="text"
-              placeholder="Video URL"
-              {...register("promotionalVideos")}
-              className="input input-bordered mt-2"
             />
           </div>
           <div className="form-control">

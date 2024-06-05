@@ -12,6 +12,9 @@ import UpdateSingleEvent from "../pages/Event/UpdateSingleEvent";
 import DetailEvent from "../pages/Event/DetailEvent";
 import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../pages/Dashboard/Dashboard";
+import AllEventInDashboard from "../pages/Dashboard/AllEventInDashboard";
+import DetailEventInDashboard from "../pages/Dashboard/DetailEventInDashboard";
+import UpdateEventDashboard from "../pages/Dashboard/UpdateEventDashboard";
 
 const router = createBrowserRouter([
   {
@@ -80,12 +83,38 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/dashboard",
-    element: (
-      <PrivateRoute>
-        <Dashboard />
-      </PrivateRoute>
-    ),
+    path: "dashboard",
+    element: <Dashboard />,
+    children: [
+      {
+        path: "all-event/:qemail",
+        element: <AllEventInDashboard />,
+        loader: ({ params }) => {
+          console.log(params.qemail);
+          return fetch(
+            `http://localhost:3000/user-added-event/${params.qemail}`
+          );
+        },
+      },
+      {
+        path: "detail-event-dashboard/:id",
+        element: <DetailEventInDashboard />,
+        loader: ({ params }) => {
+          console.log(params.id);
+          return fetch(`http://localhost:3000/get-single-event/${params.id}`);
+        },
+      },
+      {
+        path: "dashboard-update-event/:qemail",
+        element: <UpdateEventDashboard />,
+        loader: ({ params }) => {
+          console.log(params.qemail);
+          return fetch(
+            `http://localhost:3000/user-added-event/${params.qemail}`
+          );
+        },
+      },
+    ],
   },
 ]);
 
