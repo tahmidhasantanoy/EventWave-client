@@ -84,7 +84,11 @@ const router = createBrowserRouter([
   },
   {
     path: "dashboard",
-    element: <Dashboard />,
+    element: (
+      <private>
+        <Dashboard />
+      </private>
+    ),
     children: [
       {
         path: "all-event/:qemail",

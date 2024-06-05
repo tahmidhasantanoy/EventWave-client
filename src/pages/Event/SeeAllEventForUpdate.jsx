@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 
-const SeeAllEventForUpdate = ({ event }) => {
-  console.log(event);
+const SeeAllEventForUpdate = ({ event, handleDelete }) => {
+  // console.log(event);
+
   const { _id, organizerName, eventDateTime, eventName, eventLocation } = event;
 
   return (
@@ -24,7 +25,9 @@ const SeeAllEventForUpdate = ({ event }) => {
           <button className="btn btn-primary">
             <Link to={`/update-single-event/${_id}`}>Edit</Link>
           </button>
-          <button className="btn btn-warning">Delete</button>
+          <button onClick={() => handleDelete(_id)} className="btn btn-warning">
+            Delete
+          </button>
         </div>
       </div>
     </div>
