@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../Providers/AuthProvider";
@@ -16,7 +17,7 @@ const Login = () => {
     const { email, password } = data;
 
     login(email, password)
-    .then((res) => navigate(from, { replace: true })
+    .then(() => navigate(from, { replace: true })
     .catch((err) => console.log(err.message)
       )
     );

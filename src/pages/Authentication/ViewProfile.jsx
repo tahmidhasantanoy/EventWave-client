@@ -6,7 +6,7 @@ const ViewProfile = () => {
   const { currentUser } = useAuth();
   const [userData, setUserData] = useState({});
   const { _id, name, email } = userData;
-  console.log(userData);
+  console.log(userData, currentUser);
 
   useEffect(() => {
     fetch(`http://localhost:3000/user-data/${currentUser?.email}`)

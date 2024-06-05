@@ -11,6 +11,7 @@ import UpdateEvent from "../pages/Event/UpdateEvent";
 import UpdateSingleEvent from "../pages/Event/UpdateSingleEvent";
 import DetailEvent from "../pages/Event/DetailEvent";
 import PrivateRoute from "./PrivateRoute";
+import Dashboard from "../pages/Dashboard/Dashboard";
 
 const router = createBrowserRouter([
   {
@@ -77,6 +78,14 @@ const router = createBrowserRouter([
         },
       },
     ],
+  },
+  {
+    path: "/dashboard",
+    element: (
+      <PrivateRoute>
+        <Dashboard />
+      </PrivateRoute>
+    ),
   },
 ]);
 

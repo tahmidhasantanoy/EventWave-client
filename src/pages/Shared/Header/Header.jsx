@@ -37,13 +37,13 @@ const Header = () => {
               <li>
                 <Link to="/alltoys">All Events</Link>
               </li>
+              <li>
+                <Link to="/dashboard">Dashboard</Link>
+              </li>
               {currentUser ? (
                 <>
                   <li>
                     <Link to={`/add-event`}>Add Event</Link>
-                  </li>
-                  <li>
-                    <Link to="/addtoys">Update Event</Link>
                   </li>
                 </>
               ) : (
@@ -63,13 +63,13 @@ const Header = () => {
             <li>
               <Link to={`/all-events`}>All Events</Link>
             </li>
+            <li>
+              <Link to="/dashboard">Dashboard</Link>
+            </li>
             {currentUser ? (
               <>
                 <li>
                   <Link to={`/add-event`}>Add Event</Link>
-                </li>
-                <li>
-                  <Link to={`/update-event`}>Update Event</Link>
                 </li>
               </>
             ) : (
