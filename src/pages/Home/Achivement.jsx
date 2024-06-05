@@ -1,4 +1,4 @@
-
+/* eslint-disable react/no-unescaped-entities */
 
 const Achivement = () => {
   return (
@@ -14,21 +14,38 @@ const Achivement = () => {
         <p className="text-gray-600">Walmart</p>
       </div>
       <div className="md:w-1/2 mt-8 md:mt-0 relative">
-        <img
-          src="https://via.placeholder.com/400"
-          alt="Event Image"
-          className="rounded-lg shadow-lg mb-4"
-        />
-        <img
-          src="https://via.placeholder.com/200"
-          alt="Agenda"
-          className="rounded-lg shadow-lg absolute top-4 left-10 w-24 h-24"
-        />
-        <img
-          src="https://via.placeholder.com/300"
-          alt="Engagement over time"
-          className="rounded-lg shadow-lg absolute bottom-0 right-0 w-32 h-32"
-        />
+        {/*  */}
+
+        <div className=".bg-gray-100 flex items-center justify-center min-h-screen relative">
+          <div className="absolute bg-red-400 w-24 h-24 rounded-full -top-10 -left-10 z-0"></div>
+          <div className="absolute bg-yellow-400 w-24 h-24 rounded-full -bottom-10 -right-10 z-0"></div>
+          <div className="relative bg-white rounded-lg shadow-lg p-6 z-10">
+            <div className="flex flex-col items-center">
+              <div className="mb-4">
+                <img
+                  src="../../../public/images/achivement3.jpeg"
+                  alt="Tablet"
+                  className="rounded-lg shadow-md w-48 h-48"
+                />
+              </div>
+              <div className="mt-4">
+                <img
+                  src="../../../public/images/achivement1.png"
+                  alt="Registration"
+                  className="rounded-lg shadow-md w-96 h-48"
+                />
+              </div>
+              {/* <div className="absolute top-2 right-2 text-yellow-500 text-2xl">
+                😄
+              </div>
+              <div className="absolute bottom-2 right-2 text-yellow-500 text-2xl">
+                👏
+              </div> */}
+            </div>
+          </div>
+        </div>
+
+        {/*  */}
       </div>
     </div>
   );
