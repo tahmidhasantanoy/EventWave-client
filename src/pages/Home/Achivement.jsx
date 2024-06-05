@@ -35,12 +35,6 @@ const Achivement = () => {
                   className="rounded-lg shadow-md w-96 h-48"
                 />
               </div>
-              {/* <div className="absolute top-2 right-2 text-yellow-500 text-2xl">
-                😄
-              </div>
-              <div className="absolute bottom-2 right-2 text-yellow-500 text-2xl">
-                👏
-              </div> */}
             </div>
           </div>
         </div>
