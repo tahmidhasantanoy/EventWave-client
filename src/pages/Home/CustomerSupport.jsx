@@ -7,7 +7,7 @@ const CustomerSupport = () => {
             <span className="text-orange-500">24/7</span> at your service
           </h2>
           <p className="mb-6 text-gray-600">
-            Hubilo is the only webinar platform with live 24/7 expert support
+            <span className="text-primary">EventWave</span> is the only webinar platform with live 24/7 expert support
             and services anytime you need them.
           </p>
           <div className="flex justify-center space-x-2 lg:space-x-4 mb-6">

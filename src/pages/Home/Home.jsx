@@ -1,13 +1,15 @@
 import Achivement from "./Achivement";
 import CustomerSupport from "./CustomerSupport";
 import AllEventsInHome from "./AllEventsInHome";
+import HeroSection from "./HeroSection";
 
 const Home = () => {
   return (
     <>
-      <CustomerSupport />
+      <HeroSection />
       <Achivement />
       <AllEventsInHome />
+      <CustomerSupport />
     </>
   );
 };
