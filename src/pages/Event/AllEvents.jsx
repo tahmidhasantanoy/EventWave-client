@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import SingleEvent from "./SingleEvent";
 
 const AllEvents = () => {

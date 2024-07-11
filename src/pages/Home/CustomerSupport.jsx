@@ -1,8 +1,8 @@
 const CustomerSupport = () => {
   return (
-    <div className="flex flex-col lg:flex-row justify-between items-center h-screen bg-white p-4 lg:p-10">
+    <div className="flex flex-col lg:flex-row justify-between items-center h-screen bg-white p-4 lg:p-10 gap-5">
       <div className="flex-1 flex justify-center items-center p-4 lg:p-10">
-        <div className="bg-white p-6 lg:p-10 rounded-lg  text-center max-w-md w-full">
+        <div className="bg-black p-6 lg:p-10 rounded-lg  text-center max-w-md w-full">
           <h2 className="text-3xl lg:text-4xl font-bold mb-4">
             <span className="text-orange-500">24/7</span> at your service
           </h2>
@@ -43,12 +43,10 @@ const CustomerSupport = () => {
           </button>
         </div>
       </div>
-      <div className="flex-1 flex justify-center items-center bg-white h-64 lg:h-full">
-        <video
-          autoPlay
-          loop
-          src="../../../public/Video/7y1eq1y4chhtVq4N0n.mp4"
-        ></video>
+      <div className="flex-1 flex justify-center items-center bg-white  sm:h-[600px] lg:h-full ">
+        <video autoPlay loop muted>
+          <source src="../../../public/Video/7y1eq1y4chhtVq4N0n.mp4"></source>
+        </video>
       </div>
     </div>
   );
