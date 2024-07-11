@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
-
+const achivementImg1 = "https://i.ibb.co/v4vkhBX/achivement1.jpg"
+const achivementImg2 = "https://i.ibb.co/r32kPYb/achivement2-2.jpg"
 const Achivement = () => {
   return (
     <div className="container mx-auto px-4 py-16 flex flex-col md:flex-row items-center justify-between">
@@ -23,14 +24,14 @@ const Achivement = () => {
             <div className="flex flex-col items-center">
               <div className="mb-4">
                 <img
-                  src="../../../public/images/achivement3.jpeg"
+                  src={achivementImg1}
                   alt="Tablet"
                   className="rounded-lg shadow-md w-48 h-48"
                 />
               </div>
               <div className="mt-4">
                 <img
-                  src="../../../public/images/achivement1.png"
+                  src={achivementImg2}
                   alt="Registration"
                   className="rounded-lg shadow-md w-96 h-48"
                 />

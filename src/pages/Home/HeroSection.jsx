@@ -1,3 +1,4 @@
+const heroImage = "https://i.ibb.co/9gCWpHg/hero.jpg";
 const HeroSection = () => {
   return (
     <div className="bg-gradient-to-r from-blue-50 to-white py-16 px-4">
@@ -34,7 +35,8 @@ const HeroSection = () => {
         <div className="flex justify-center items-center h-screen">
           <div className="relative group">
             <img
-              src="../../../public/images/hero.jpg"
+              // src="../../../public/images/hero.jpg"
+              src={heroImage}
               alt="Fancy"
               className="w-96 h-96 object-cover border-8 border-blue-500 shadow-lg transform transition-transform duration-500 group-hover:scale-105"
               style={{
