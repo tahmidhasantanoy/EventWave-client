@@ -1,10 +1,62 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Profile from "./Profile";
 import useAuth from "../../../Hooks/useAuth";
+import "./Header.css";
 
 const Header = () => {
   const { currentUser } = useAuth();
   console.log(currentUser);
+
+  const menu = (
+    <>
+      <li>
+        <NavLink
+          to="/"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "active" : ""
+          }
+        >
+          Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/all-events"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "active" : ""
+          }
+        >
+          All Events
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/dashboard"
+          className={({ isActive, isPending }) => {
+            isPending ? "pending" : isActive ? "active" : "";
+          }}
+        >
+          Dashboard
+        </NavLink>
+      </li>
+      {currentUser ? (
+        <>
+          <li>
+            <NavLink
+              to={`/add-event`}
+              className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "active" : ""
+              }
+            >
+              add Events
+            </NavLink>
+          </li>
+        </>
+      ) : (
+        ""
+      )}
+    </>
+  );
 
   return (
     <div>
@@ -12,7 +64,7 @@ const Header = () => {
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
-              {/* <svg
+              <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
                 fill="none"
@@ -25,30 +77,13 @@ const Header = () => {
                   strokeWidth="2"
                   d="M4 6h16M4 12h8m-8 6h16"
                 />
-              </svg> */}
+              </svg>
             </label>
             <ul
               tabIndex={0}
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/alltoys">All Events</Link>
-              </li>
-              <li>
-                <Link to="/dashboard">Dashboard</Link>
-              </li>
-              {currentUser ? (
-                <>
-                  <li>
-                    <Link to={`/add-event`}>Add Event</Link>
-                  </li>
-                </>
-              ) : (
-                ""
-              )}
+              {menu}
             </ul>
           </div>
           <Link to="/" className="btn">
@@ -56,26 +91,7 @@ const Header = () => {
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to={`/all-events`}>All Events</Link>
-            </li>
-            <li>
-              <Link to="/dashboard">Dashboard</Link>
-            </li>
-            {currentUser ? (
-              <>
-                <li>
-                  <Link to={`/add-event`}>Add Event</Link>
-                </li>
-              </>
-            ) : (
-              ""
-            )}
-          </ul>
+          <ul className="menu menu-horizontal px-1">{menu}</ul>
         </div>
         <div className="navbar-end">
           {currentUser ? (

@@ -1,8 +1,7 @@
-const heroImage = "https://i.ibb.co/9gCWpHg/hero.jpg";
 import { motion } from "framer-motion";
+const heroImage = "https://i.ibb.co/9gCWpHg/hero.jpg";
 
 const HeroSection = () => {
-  
   const fadeupAnimation = {
     hide: { opacity: 0, y: 100 },
     show: {
@@ -27,60 +26,40 @@ const HeroSection = () => {
         >
           <motion.h1
             variants={fadeupAnimation}
-            // initial="hide"
-            // animate="show"
-            className="text-4xl lg:text-5xl font-bold mb-6"
+            className="text-4xl hover:text-black duration-700 lg:text-5xl font-bold mb-6"
           >
             A better way to manage your events
           </motion.h1>
           <motion.ul
             variants={fadeupAnimation}
-            // initial="hide"
-            // animate="show"
             className="list-none space-y-2 mb-8 text-lg text-gray-700"
           >
-            <motion.li
-              variants={fadeupAnimation}
-              // initial="hide"
-              // animate="show"
-              className="flex items-center"
-            >
+            <motion.li variants={fadeupAnimation} className="flex items-center">
               <span className="text-blue-500 mr-2">✓</span>
-              Find hotels and venues
+              <span className="hover:text-blue-700">
+                Find hotels and venues
+              </span>
             </motion.li>
-            <motion.li
-              variants={fadeupAnimation}
-              // initial="hide"
-              // animate="show"
-              className="flex items-center"
-            >
+            <motion.li variants={fadeupAnimation} className="flex items-center">
               <span className="text-blue-500 mr-2">✓</span>
-              Plan and promote your event
+              <span className="hover:text-blue-700">
+                Plan and promote your event
+              </span>
             </motion.li>
-            <motion.li
-              variants={fadeupAnimation}
-              // initial="hide"
-              // animate="show"
-              className="flex items-center"
-            >
+            <motion.li variants={fadeupAnimation} className="flex items-center">
               <span className="text-blue-500 mr-2">✓</span>
-              Engage your attendees
+              <span className="hover:text-blue-700">Engage your attendees</span>
             </motion.li>
-            <motion.li
-              variants={fadeupAnimation}
-              // initial="hide"
-              // animate="show"
-              className="flex items-center"
-            >
+            <motion.li variants={fadeupAnimation} className="flex items-center">
               <span className="text-blue-500 mr-2">✓</span>
-              Capture leads and track ROI
+              <span className="hover:text-blue-700">
+                Capture leads and track ROI
+              </span>
             </motion.li>
           </motion.ul>
           <div className="flex justify-center lg:justify-start space-x-4">
             <motion.button
               variants={fadeupAnimation}
-              // initial="hide"
-              // animate="show"
               className="btn btn-primary"
             >
               Explore the platform

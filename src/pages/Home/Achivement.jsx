@@ -1,11 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
 import { motion /* useScroll, useTransform */ } from "framer-motion";
-// import { useRef } from "react";
 import useScrollGrowFromLeft from "../../Hooks/useScrollGrowFromLeft";
 import useScrollGrowFromRight from "../../Hooks/useScrollGrowFromRight";
 
 const Achivement = () => {
-  // const achivementRef = useRef();
   const { leftStyle, LeftAchivementRef } = useScrollGrowFromLeft();
   const { rightStyle, rightAchivementRef } = useScrollGrowFromRight();
 
@@ -13,7 +11,7 @@ const Achivement = () => {
   const achivementImg2 = "https://i.ibb.co/r32kPYb/achivement2-2.jpg";
 
   return (
-    <div className="container mx-auto px-4 py-16 flex flex-col md:flex-row items-center justify-between">
+    <div className="container mx-auto px-4 py-16 flex flex-col sm:flex-col md:flex-col lg:flex-row items-center justify-between">
       <motion.div
         ref={LeftAchivementRef}
         style={leftStyle}
