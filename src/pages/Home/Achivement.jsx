@@ -1,10 +1,24 @@
 /* eslint-disable react/no-unescaped-entities */
-const achivementImg1 = "https://i.ibb.co/v4vkhBX/achivement1.jpg"
-const achivementImg2 = "https://i.ibb.co/r32kPYb/achivement2-2.jpg"
+import { motion /* useScroll, useTransform */ } from "framer-motion";
+// import { useRef } from "react";
+import useScrollGrowFromLeft from "../../Hooks/useScrollGrowFromLeft";
+import useScrollGrowFromRight from "../../Hooks/useScrollGrowFromRight";
+
 const Achivement = () => {
+  // const achivementRef = useRef();
+  const { leftStyle, LeftAchivementRef } = useScrollGrowFromLeft();
+  const { rightStyle, rightAchivementRef } = useScrollGrowFromRight();
+
+  const achivementImg1 = "https://i.ibb.co/v4vkhBX/achivement1.jpg";
+  const achivementImg2 = "https://i.ibb.co/r32kPYb/achivement2-2.jpg";
+
   return (
     <div className="container mx-auto px-4 py-16 flex flex-col md:flex-row items-center justify-between">
-      <div className="md:w-1/2">
+      <motion.div
+        ref={LeftAchivementRef}
+        style={leftStyle}
+        className="md:w-1/2"
+      >
         <h2 className="text-4xl font-bold mb-6">7M+ events managed</h2>
         <blockquote className="text-lg italic text-gray-600 mb-4">
           "We have a great partnership with Cvent. Cvent is our primary
@@ -13,11 +27,13 @@ const Achivement = () => {
         </blockquote>
         <p className="text-gray-800 font-bold">Heather L.</p>
         <p className="text-gray-600">Walmart</p>
-      </div>
-      <div className="md:w-1/2 mt-8 md:mt-0 relative">
-        {/*  */}
-
-        <div className=".bg-gray-100 flex items-center justify-center min-h-screen relative">
+      </motion.div>
+      <motion.div
+        ref={rightAchivementRef}
+        style={rightStyle}
+        className="md:w-1/2 mt-8 md:mt-0 relative"
+      >
+        <div className="bg-gray-100 flex items-center justify-center min-h-screen relative">
           <div className="absolute bg-red-400 w-24 h-24 rounded-full -top-10 -left-10 z-0"></div>
           <div className="absolute bg-yellow-400 w-24 h-24 rounded-full -bottom-10 -right-10 z-0"></div>
           <div className="relative bg-white rounded-lg shadow-lg p-6 z-10">
@@ -39,9 +55,7 @@ const Achivement = () => {
             </div>
           </div>
         </div>
-
-        {/*  */}
-      </div>
+      </motion.div>
     </div>
   );
 };

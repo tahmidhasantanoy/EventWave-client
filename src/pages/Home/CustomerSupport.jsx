@@ -1,4 +1,9 @@
+import { motion } from "framer-motion";
+import useScrollGrowFromRight from "../../Hooks/useScrollGrowFromRight";
+
 const CustomerSupport = () => {
+  const { rightAchivementRef, rightStyle } = useScrollGrowFromRight();
+
   return (
     <div className="flex flex-col lg:flex-row justify-between items-center h-screen bg-white p-4 lg:p-10 gap-5">
       <div className="flex-1 flex justify-center items-center p-4 lg:p-10">
@@ -44,9 +49,15 @@ const CustomerSupport = () => {
         </div>
       </div>
       <div className="flex-1 flex justify-center items-center bg-white  sm:h-[600px] lg:h-full ">
-        <video autoPlay loop muted>
+        <motion.video
+          style={rightStyle}
+          ref={rightAchivementRef}
+          autoPlay
+          loop
+          muted
+        >
           <source src="../../../public/Video/7y1eq1y4chhtVq4N0n.mp4"></source>
-        </video>
+        </motion.video>
       </div>
     </div>
   );
