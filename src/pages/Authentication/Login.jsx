@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
   const { register, handleSubmit } = useForm();
@@ -16,14 +17,15 @@ const Login = () => {
 
     const { email, password } = data;
 
-    login(email, password)
-    .then(() => navigate(from, { replace: true })
-    .catch((err) => console.log(err.message)
-      )
+    login(email, password).then(() =>
+      navigate(from, { replace: true }).catch((err) => console.log(err.message))
     );
   };
   return (
     <div className="hero min-h-screen bg-base-200">
+      <Helmet>
+        <title>EventWave</title>
+      </Helmet>
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left">
           <h1 className="text-5xl font-bold">Login now!</h1>

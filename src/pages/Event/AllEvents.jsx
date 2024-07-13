@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import SingleEvent from "./SingleEvent";
+// import Title from "../Title/Title";
+import { Helmet } from "react-helmet";
 
 const AllEvents = () => {
   const [events, setEvents] = useState([]);
@@ -17,6 +19,9 @@ const AllEvents = () => {
 
   return (
     <div className="my-6">
+      <Helmet>
+        <title>EventWave | Events</title>
+      </Helmet>
       <div className="mb-6 w-full">
         <input
           onChange={(e) => setQusery(e.target.value)}

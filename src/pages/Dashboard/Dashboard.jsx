@@ -2,6 +2,7 @@ import { Link, Outlet } from "react-router-dom";
 import { FaHome, FaSwatchbook } from "react-icons/fa";
 import useAuth from "../../Hooks/useAuth";
 import { MdOutlineTipsAndUpdates } from "react-icons/md";
+import { Helmet } from "react-helmet";
 
 const DashBoardPage = () => {
   const { currentUser } = useAuth();
@@ -9,6 +10,9 @@ const DashBoardPage = () => {
 
   return (
     <div className="drawer lg:drawer-open">
+      <Helmet>
+        <title>EventWave | Dashboard</title>
+      </Helmet>
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col items-center justify-center ">
         <Outlet></Outlet>
@@ -36,7 +40,9 @@ const DashBoardPage = () => {
               </Link>
             </li>
             <li>
-              <Link to={`/dashboard/dashboard-update-event/${currentUser?.email}`}>
+              <Link
+                to={`/dashboard/dashboard-update-event/${currentUser?.email}`}
+              >
                 <MdOutlineTipsAndUpdates />
                 Update Event
               </Link>

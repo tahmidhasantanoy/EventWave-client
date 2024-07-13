@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useAuth from "../../Hooks/useAuth";
+import { Helmet } from "react-helmet";
 
 const AddEvent = () => {
   const { register, handleSubmit } = useForm();
@@ -84,6 +85,9 @@ const AddEvent = () => {
   return (
     <div className="min-h-screen bg-base-200 flex justify-center items-center">
       <ToastContainer />
+      <Helmet>
+        <title>EventWave | Add Event</title>
+      </Helmet>
       <div className="card w-full max-w-3xl shadow-2xl bg-base-100">
         <form onSubmit={handleSubmit(onSubmit)} className="card-body">
           <h2 className="text-2xl font-bold">Create Event</h2>

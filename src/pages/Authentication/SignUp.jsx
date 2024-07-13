@@ -4,6 +4,7 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FcGoogle } from "react-icons/fc";
+import { Helmet } from "react-helmet";
 
 const SignUp = () => {
   const [cpass, setCpass] = useState("");
@@ -68,6 +69,9 @@ const SignUp = () => {
 
   return (
     <div className="hero min-h-screen bg-base-200">
+      <Helmet>
+        <title>EventWave</title>
+      </Helmet>
       <div className=".absolute">
         <ToastContainer />;
       </div>

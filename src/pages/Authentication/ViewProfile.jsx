@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { Helmet } from "react-helmet";
 
 const ViewProfile = () => {
   const { currentUser } = useContext(AuthContext);
@@ -18,6 +19,9 @@ const ViewProfile = () => {
 
   return (
     <div className="card w-full max-w-md bg-base-100 shadow-xl mx-auto my-4">
+      <Helmet>
+        <title>EventWave | Profile</title>
+      </Helmet>
       <figure className="px-10 pt-10">
         <img
           src={"image"}

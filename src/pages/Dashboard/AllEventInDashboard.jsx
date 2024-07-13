@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import SingleEventDashboard from "./SingleEventDashboard";
+import { Helmet } from "react-helmet";
 
 const AllEventInDashboard = () => {
   const specificUserEvent = useLoaderData();
@@ -7,6 +8,9 @@ const AllEventInDashboard = () => {
 
   return (
     <div className="my-6">
+      <Helmet>
+        <title>Dashboard | All Events</title>
+      </Helmet>
       <h3 className="text-center text-4xl text-primary">
         EventWave all events{" "}
       </h3>
