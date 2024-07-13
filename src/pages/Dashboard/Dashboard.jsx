@@ -1,8 +1,9 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import { FaHome, FaSwatchbook } from "react-icons/fa";
 import useAuth from "../../Hooks/useAuth";
 import { MdOutlineTipsAndUpdates } from "react-icons/md";
 import { Helmet } from "react-helmet";
+import "./Dashboard.css";
 
 const DashBoardPage = () => {
   const { currentUser } = useAuth();
@@ -29,23 +30,36 @@ const DashBoardPage = () => {
           {/* Sidebar content here */}
           <>
             <li>
-              <Link to={"/"}>
+              <NavLink
+                className={({ isActive, isPending }) => {
+                  isPending ? "Pending" : isActive ? "text-cyan-200" : "";
+                }}
+                to={"/"}
+              >
                 <FaHome /> Home
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link to={`/dashboard/all-event/${currentUser?.email}`}>
+              <NavLink
+                to={`/dashboard/all-event/${currentUser?.email}`}
+                className={({ isActive, isPending }) =>
+                  isPending ? "Pending" : isActive ? "active" : ""
+                }
+              >
                 <FaSwatchbook />
                 All Event
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
+              <NavLink
+                className={({ isActive, isPending }) =>
+                  isActive ? "active" : isPending ? "pending" : ""
+                }
                 to={`/dashboard/dashboard-update-event/${currentUser?.email}`}
               >
                 <MdOutlineTipsAndUpdates />
                 Update Event
-              </Link>
+              </NavLink>
             </li>
           </>
         </ul>
