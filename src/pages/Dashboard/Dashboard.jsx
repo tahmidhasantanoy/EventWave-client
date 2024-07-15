@@ -1,4 +1,4 @@
-import { Link, NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import { FaHome, FaSwatchbook } from "react-icons/fa";
 import useAuth from "../../Hooks/useAuth";
 import { MdOutlineTipsAndUpdates } from "react-icons/md";
@@ -12,7 +12,7 @@ const DashBoardPage = () => {
   return (
     <div className="drawer lg:drawer-open">
       <Helmet>
-        <title>EventWave | Dashboard</title>
+        <title>Dashboard | EventWave</title>
       </Helmet>
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col items-center justify-center ">

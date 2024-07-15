@@ -20,7 +20,7 @@ const AllEvents = () => {
   return (
     <div className="my-6">
       <Helmet>
-        <title>EventWave | Events</title>
+        <title>Events | EventWave</title>
       </Helmet>
       <div className="mb-6 w-full">
         <input

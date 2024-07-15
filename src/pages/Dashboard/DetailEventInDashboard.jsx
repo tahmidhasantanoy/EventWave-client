@@ -22,7 +22,7 @@ const DetailEventInDashboard = () => {
   return (
     <div className="container mx-auto p-4">
       <Helmet>
-        <title>Dashboard | Events Details</title>
+        <title>Events Details | Dashboard</title>
       </Helmet>
       <div className="flex flex-col md:flex-row items-center md:items-start">
         <img

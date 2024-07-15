@@ -12,7 +12,7 @@ const useScrollGrowFromRight = () => {
   });
 
   const scaleValues = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
-  const xAxistransform = useTransform(scrollYProgress, [0, 1], [+400, 0]);
+  const xAxistransform = useTransform(scrollYProgress, [0, 1], [+100, 0]);
   const opacityTransform = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   const rightStyle = {

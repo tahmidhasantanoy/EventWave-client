@@ -86,7 +86,7 @@ const AddEvent = () => {
     <div className="min-h-screen bg-base-200 flex justify-center items-center">
       <ToastContainer />
       <Helmet>
-        <title>EventWave | Add Event</title>
+        <title>Add Event | EventWave</title>
       </Helmet>
       <div className="card w-full max-w-3xl shadow-2xl bg-base-100">
         <form onSubmit={handleSubmit(onSubmit)} className="card-body">

@@ -31,7 +31,7 @@ const Achivement = () => {
         style={rightStyle}
         className="md:w-1/2 mt-8 md:mt-0 relative"
       >
-        <div className="bg-gray-100 flex items-center justify-center min-h-screen relative">
+        <div className=".bg-gray-100 flex items-center justify-center min-h-screen relative">
           <div className="absolute bg-red-400 w-24 h-24 rounded-full -top-10 -left-10 z-0"></div>
           <div className="absolute bg-yellow-400 w-24 h-24 rounded-full -bottom-10 -right-10 z-0"></div>
           <div className="relative bg-white rounded-lg shadow-lg p-6 z-10">

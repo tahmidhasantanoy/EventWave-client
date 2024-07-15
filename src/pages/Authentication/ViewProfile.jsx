@@ -20,7 +20,7 @@ const ViewProfile = () => {
   return (
     <div className="card w-full max-w-md bg-base-100 shadow-xl mx-auto my-4">
       <Helmet>
-        <title>EventWave | Profile</title>
+        <title>Profile | EventWave</title>
       </Helmet>
       <figure className="px-10 pt-10">
         <img

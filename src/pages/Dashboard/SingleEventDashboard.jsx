@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const SingleEventDashboard = ({ event }) => {
   const { _id, organizerName, eventDateTime, eventName, eventLocation } = event;
   return (
-    <div className="card w-full md:w-96 bg-base-100 shadow-xl m-4 group hover:bg-base-200">
+    <div className="card w-full md:w-96 bg-base-100 shadow-xl m-4 group hover:bg-base-300 duration-700">
       <figure className="px-10 pt-10">
         <img
           src={"https://ibb.co/V3nLWRc"}

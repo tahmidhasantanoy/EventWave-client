@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>EventWave | Home</title>
+        <title>Home | EventWave</title>
       </Helmet>
       <HeroSection />
       <Achivement />

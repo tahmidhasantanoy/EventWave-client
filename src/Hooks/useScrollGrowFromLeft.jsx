@@ -11,7 +11,7 @@ const useScrollGrowFromLeft = () => {
   });
 
   const scaleValues = useTransform(scrollYProgress, [0, 1], [1, 1]);
-  const xAxistransform = useTransform(scrollYProgress, [0, 1], [-300, 0]);
+  const xAxistransform = useTransform(scrollYProgress, [0, 1], [-100, 0]);
   const opacityTransform = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   const leftStyle = {
