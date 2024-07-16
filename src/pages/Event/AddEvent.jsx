@@ -8,78 +8,82 @@ const AddEvent = () => {
   const { register, handleSubmit } = useForm();
   const { currentUser } = useAuth();
 
+  const img_hosting_token = import.meta.env.VITE_image_api;
+  const img_hosting_url = `https://api.imgbb.com/1/upload?expiration=600&key=${img_hosting_token}`;
+  console.log(img_hosting_token);
+
   const onSubmit = (data) => {
     console.log(data);
-    // Handle form submission
+    console.log(data.promotionalImages[0]);
 
-    const {
-      eventName,
-      userEmail,
-      eventDateTime,
-      eventLocation,
-      eventDescription,
-      organizerName,
-      organizerEmail,
-      organizerBio,
-      speakersPerformers,
-      ticketsRegistrationLink,
-      ticketsPrice,
-      targetAudience,
-      sponsorsPartners,
-      promotionalImages,
-      socialMediaFacebook,
-    } = data;
+    if (data.promotionalImages[0]) {
+      const formData = new FormData();
+      formData.append("image", data.promotionalImages[0]);
 
-    console.log(
-      eventName,
-      userEmail,
-      eventDateTime,
-      eventLocation,
-      eventDescription,
-      organizerName,
-      organizerEmail,
-      organizerBio,
-      speakersPerformers,
-      ticketsRegistrationLink,
-      ticketsPrice,
-      targetAudience,
-      sponsorsPartners,
-      promotionalImages,
-      socialMediaFacebook
-    );
-
-    const newEventInfo = {
-      eventName,
-      userEmail,
-      eventDateTime,
-      eventLocation,
-      eventDescription,
-      organizerName,
-      organizerEmail,
-      organizerBio,
-      speakersPerformers,
-      ticketsRegistrationLink,
-      ticketsPrice,
-      targetAudience,
-      sponsorsPartners,
-      promotionalImages,
-      socialMediaFacebook,
-    };
-
-    //add a event data to db
-    fetch("https://event-wave-server-phi.vercel.app/event-info", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newEventInfo),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        toast.success("Event Added");
+      fetch(img_hosting_url, {
+        method: "POST",
+        body: formData,
       })
-      .catch((err) => console.log(err.message));
+        .then((res) => res.json())
+        .then((img_data) => {
+          console.log(img_data); // here i get chunk of data with display_url
+          console.log(img_data?.data?.display_url); // undefined
+
+          const promotionalImages = img_data?.data?.display_url;
+
+          const {
+            eventName,
+            userEmail,
+            eventDateTime,
+            eventLocation,
+            eventDescription,
+            organizerName,
+            organizerEmail,
+            organizerBio,
+            speakersPerformers,
+            ticketsRegistrationLink,
+            ticketsPrice,
+            targetAudience,
+            sponsorsPartners,
+            // promotionalImages,
+            socialMediaFacebook,
+          } = data;
+
+          const newEventInfo = {
+            eventName,
+            userEmail,
+            eventDateTime,
+            eventLocation,
+            eventDescription,
+            organizerName,
+            organizerEmail,
+            organizerBio,
+            speakersPerformers,
+            ticketsRegistrationLink,
+            ticketsPrice,
+            targetAudience,
+            sponsorsPartners,
+            promotionalImages,
+            socialMediaFacebook,
+          };
+
+          //add a event data to db
+          fetch("https://event-wave-server-phi.vercel.app/event-info", {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(newEventInfo),
+          })
+            .then((res) => res.json())
+            // eslint-disable-next-line no-unused-vars
+            .then((data) => {
+              // console.log(data);
+              toast.success("Event Added");
+            })
+            .catch((err) => console.log(err.message));
+        });
+    }
   };
 
   return (
@@ -196,15 +200,6 @@ const AddEvent = () => {
             ></textarea>
           </div>
           <div className="form-control">
-            <label className="label">Promotional Images/Videos</label>
-            <input
-              type="text"
-              placeholder="Image URL"
-              {...register("promotionalImages")}
-              className="input input-bordered"
-            />
-          </div>
-          <div className="form-control">
             <label className="label">Social Media Links</label>
             <input
               type="text"
@@ -213,7 +208,15 @@ const AddEvent = () => {
               className="input input-bordered"
             />
           </div>
-
+          <div className="form-control">
+            <label className="label">Promotional Images/Videos</label>
+            <input
+              type="file"
+              placeholder="Image URL"
+              {...register("promotionalImages")}
+              className="ml-8 .input .input-bordered"
+            />
+          </div>
           <div className="form-control mt-6">
             <button className="btn btn-primary">Create Event</button>
           </div>

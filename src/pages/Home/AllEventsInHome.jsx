@@ -4,11 +4,12 @@ import { motion } from "framer-motion";
 
 const UpdateEvents = () => {
   const [events, setEvents] = useState([]);
+  const [visibleEvents, setVisibleEvents] = useState(6); // Initially display 6 events
 
   const fadeupAnimation = {
     hide: { opacity: 0, y: -70 },
     show: {
-      opacity: 2,
+      opacity: 1, // Corrected opacity to 1
       y: 0,
       transition: {
         staggerChildren: 0.4,
@@ -22,6 +23,10 @@ const UpdateEvents = () => {
       .then((res) => res.json())
       .then((data) => setEvents(data));
   }, []);
+
+  const handleSeeMore = () => {
+    setVisibleEvents((prevVisibleEvents) => prevVisibleEvents + 6); // Show 6 more events each time
+  };
 
   return (
     <div>
@@ -43,10 +48,20 @@ const UpdateEvents = () => {
         </div>
       </motion.div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4">
-        {events.map((item, index) => (
+        {events.slice(0, visibleEvents).map((item, index) => (
           <SingleEvent key={index} event={item}></SingleEvent>
         ))}
       </div>
+      {visibleEvents < events.length && (
+        <div className="flex justify-center mt-4">
+          <button 
+            onClick={handleSeeMore} 
+            className="px-4 py-2 bg-primary text-white rounded hover:bg-blue-600 hover:text-black duration-300"
+          >
+            See More
+          </button>
+        </div>
+      )}
     </div>
   );
 };
