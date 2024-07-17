@@ -83,7 +83,7 @@ const UpdateSingleEvent = () => {
   return (
     <div className="min-h-screen bg-base-200 flex justify-center items-center">
       <ToastContainer />
-      <div className="card w-full max-w-3xl shadow-2xl bg-base-100">
+      <div className="card w-full max-w-3xl shadow-2xl bg-base-100 my-10">
         <form onSubmit={handleSubmit(onSubmit)} className="card-body">
           <h2 className="text-2xl font-bold">Update Event</h2>
 

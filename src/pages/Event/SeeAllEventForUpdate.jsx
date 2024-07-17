@@ -2,7 +2,6 @@
 import { Link } from "react-router-dom";
 
 const SeeAllEventForUpdate = ({ event, handleDelete }) => {
-  // console.log(event);
 
   const { _id, organizerName, eventDateTime, eventName, eventLocation } = event;
 

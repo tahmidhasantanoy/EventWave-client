@@ -92,7 +92,7 @@ const AddEvent = () => {
       <Helmet>
         <title>Add Event | EventWave</title>
       </Helmet>
-      <div className="card w-full max-w-3xl shadow-2xl bg-base-100">
+      <div className="card w-full max-w-3xl shadow-2xl bg-base-100 my-10">
         <form onSubmit={handleSubmit(onSubmit)} className="card-body">
           <h2 className="text-2xl font-bold">Create Event</h2>
 
