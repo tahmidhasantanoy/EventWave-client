@@ -8,3 +8,4 @@ A brief description of EventWave does :
 - [This site contain search field.Which make user work eficient.](#routes)
 - [All the api is secure beause i use JWT](#dependencies)
 - [Live link](#https://eventwave-4d8f8.web.app/)
+- [Server link](#https://event-wave-server-phi.vercel.app/)
