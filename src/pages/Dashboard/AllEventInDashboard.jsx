@@ -41,7 +41,7 @@ const AllEventInDashboard = () => {
           </motion.p>
         </div>
       </motion.div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 mt-12 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 mt-12 gap-8">
         {
           /* filteredItems.map((item, index) => (
           <SingleEvent key={index} event={item}></SingleEvent>

@@ -1,7 +1,10 @@
+import { Helmet } from "react-helmet";
 import { useLoaderData } from "react-router-dom";
 
 const DetailEvent = () => {
   const eventDetail = useLoaderData();
+  console.log(eventDetail);
+
   const {
     eventName,
     eventDateTime,
@@ -16,20 +19,24 @@ const DetailEvent = () => {
     promotionalImages,
     socialMediaFacebook,
   } = eventDetail;
+
   return (
     <div className="container mx-auto p-4">
-      <div className="flex flex-col md:flex-row items-center md:items-start">
+      <Helmet>
+        <title>Event Details | EventWave</title>
+      </Helmet>
+      <div className="flex flex-col lg:flex-row   items-center lg:items-start">
         <img
-          src={promotionalImages[0]}
+          src={promotionalImages}
           alt="Event"
-          className="w-full md:w-1/3 rounded-xl mb-4 md:mb-0 md:mr-4"
+          className="w-full lg:w-1/3 rounded-xl mb-4 md:mb-0 lg:mb-0 lg:mr-4"
         />
         <div className="flex-1">
-          <h1 className="text-4xl font-bold mb-2 text-center md:text-left">
+          <h1 className="text-4xl font-bold mb-2 text-center lg:text-left">
             {eventName}
           </h1>
-          <p className="text-xl text-center md:text-left">{eventLocation}</p>
-          <p className="text-center md:text-left mb-4">{eventDateTime}</p>
+          <p className="text-xl text-center lg:text-left">{eventLocation}</p>
+          <p className="text-center lg:text-left mb-4">{eventDateTime}</p>
           <div>
             <p className="mb-2">
               <strong>Description:</strong> {eventDescription}
@@ -58,7 +65,7 @@ const DetailEvent = () => {
               {/* {sponsorsPartners.join(", ")} */}
             </p>
           </div>
-          <div className="flex flex-col items-center md:items-start mt-4">
+          <div className="flex flex-col items-center lg:items-start mt-4">
             <button
               href={ticketsRegistrationLink}
               className="btn btn-primary mb-2"

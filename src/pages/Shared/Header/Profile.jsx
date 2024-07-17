@@ -26,7 +26,7 @@ const Profile = () => {
         </button>
       </div>
       {isOpen && (
-        <div className="absolute text-zinc-700 bg-white right-0 gap-4 w-32 rounded-lg py-3">
+        <div className="absolute text-zinc-700 bg-white right-0 gap-8 w-32 rounded-lg py-3">
           <Link to={`/profile/${currentUser?.email}`}>
             <p className="py-1 hover:bg-zinc-200 pl-4">Profile</p>
           </Link>

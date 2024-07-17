@@ -56,13 +56,14 @@ const UpdateEventDashboard = () => {
             variants={fadeupAnimation}
             className="text-slate-400 w-[700px] mt-3 text-center"
           >
-            Crafting Dynamic Events with Flexibility and Precision: At EventWave, we specialize in creating unforgettable moments that
-            can be effortlessly updated, edited, or perfected to your exact
+            Crafting Dynamic Events with Flexibility and Precision: At
+            EventWave, we specialize in creating unforgettable moments that can
+            be effortlessly updated, edited, or perfected to your exact
             specifications.
           </motion.p>
         </div>
       </motion.div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 mt-12 gap-4 px-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 mt-12 gap-8 px-3">
         {userEvents?.map((item, index) => (
           <SeeAllEventForUpdate
             key={index}

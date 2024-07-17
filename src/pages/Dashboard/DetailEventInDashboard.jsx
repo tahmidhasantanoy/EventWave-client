@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom";
 
 const DetailEventInDashboard = () => {
   const eventDetail = useLoaderData();
+  console.log(eventDetail);
 
   const {
     eventName,
@@ -18,6 +19,21 @@ const DetailEventInDashboard = () => {
     promotionalImages,
     socialMediaFacebook,
   } = eventDetail;
+
+  console.log(
+    eventName,
+    eventDateTime,
+    eventLocation,
+    eventDescription,
+    organizerName,
+    organizerEmail,
+    organizerBio,
+    ticketsRegistrationLink,
+    ticketsPrice,
+    targetAudience,
+    promotionalImages,
+    socialMediaFacebook
+  );
 
   return (
     <div className="container mx-auto p-4">

@@ -29,7 +29,7 @@ const UpdateEvents = () => {
   };
 
   return (
-    <div>
+    <div className="sm:my-7 md:my-10 lg:my-15">
       <motion.div variants={fadeupAnimation} initial="hide" animate="show">
         <motion.h3
           variants={fadeupAnimation}
@@ -47,15 +47,15 @@ const UpdateEvents = () => {
           </motion.p>
         </div>
       </motion.div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
         {events.slice(0, visibleEvents).map((item, index) => (
           <SingleEvent key={index} event={item}></SingleEvent>
         ))}
       </div>
       {visibleEvents < events.length && (
         <div className="flex justify-center mt-4">
-          <button 
-            onClick={handleSeeMore} 
+          <button
+            onClick={handleSeeMore}
             className="px-4 py-2 bg-primary text-white rounded hover:bg-blue-600 hover:text-black duration-300"
           >
             See More
