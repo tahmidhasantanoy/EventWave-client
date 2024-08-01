@@ -50,13 +50,19 @@ const CustomerSupport = () => {
       </div>
       <div className="flex-1 flex justify-center items-center bg-white w-full h-64 lg:h-full">
         <motion.video
-          style={{ ...rightStyle, width: '100%', height: '100%', objectFit: 'cover' }}
+          style={{
+            ...rightStyle,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+          }}
           ref={rightAchivementRef}
           autoPlay
           loop
           muted
         >
-          <source src="../../../public/Video/7y1eq1y4chhtVq4N0n.mp4" />
+          <source src="/animation.mp4" />
+          {/*  video is not show after deploy*/}
         </motion.video>
       </div>
     </div>
