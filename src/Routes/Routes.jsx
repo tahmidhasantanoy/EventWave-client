@@ -70,7 +70,15 @@ const router = createBrowserRouter([
         element: <UpdateSingleEvent />,
         loader: ({ params }) => {
           return fetch(
-            `https://event-wave-server-phi.vercel.app/get-single-event/${params.id}`
+            `https://event-wave-server-phi.vercel.app/get-single-event/${params.id}`,
+            {
+              method: "GET",
+              headers: {
+                authorization: `Bearer ${localStorage.getItem(
+                  "EventWave-access-toke"
+                )}`,
+              },
+            }
           );
         },
       },
@@ -83,7 +91,15 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) => {
           return fetch(
-            `https://event-wave-server-phi.vercel.app/get-single-event/${params.id}`
+            `https://event-wave-server-phi.vercel.app/get-single-event/${params.id}`,
+            {
+              method: "GET",
+              headers: {
+                authorization: `Bearer ${localStorage.getItem(
+                  "EventWave-access-toke"
+                )}`,
+              },
+            }
           );
         },
       },
@@ -113,7 +129,15 @@ const router = createBrowserRouter([
         loader: ({ params }) => {
           console.log(params.id);
           return fetch(
-            `https://event-wave-server-phi.vercel.app/get-single-event/${params.id}`
+            `https://event-wave-server-phi.vercel.app/get-single-event/${params.id}`,
+            {
+              method: "GET",
+              headers: {
+                authorization: `Bearer ${localStorage.getItem(
+                  "EventWave-access-toke"
+                )}`,
+              },
+            }
           );
         },
       },

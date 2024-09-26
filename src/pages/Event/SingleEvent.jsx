@@ -21,7 +21,7 @@ const SingleEvent = ({ event }) => {
         <h2 className="card-title">{eventName}</h2>
         <p>{eventLocation}</p>
         <p>{eventDateTime}</p>
-        <p>Price: ${"event.price"}</p>
+        <p>Price: ${event.ticketsPrice}</p>
         <p>Organized by: {organizerName}</p>
         <div className="card-actions opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <button className="btn btn-primary">

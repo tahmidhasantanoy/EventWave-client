@@ -5,6 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FcGoogle } from "react-icons/fc";
 import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
   const [cpass, setCpass] = useState("");
@@ -79,9 +80,9 @@ const SignUp = () => {
         <div className="text-center lg:text-left">
           <h1 className="text-5xl font-bold">Register now!</h1>
           <p className="py-6">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
+            Registering on our website allows you to access personalized
+            features, track your activity, and receive updates tailored to your
+            interests. It also ensures a secure and enhanced user experience.
           </p>
         </div>
         <div className=".card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mb-0 pb-0">
@@ -133,9 +134,13 @@ const SignUp = () => {
 
             {cpass && <p>{cpass}</p>}
             <div className="form-control mt-6">
-              <button className="btn btn-primary">Register</button>
+              <button className="btn btn-primary">Sign Up</button>
             </div>
           </form>
+          <Link className="text-black ml-8" to={"/login"}>
+            Already have account?{" "}
+            <span className="text-red-500 hover:underline">Login</span>
+          </Link>
           <div className="form-control mt-6 card-body">
             <button
               onClick={handleGoogleLogin}

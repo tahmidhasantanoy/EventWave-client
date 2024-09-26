@@ -11,7 +11,7 @@ const AddEvent = () => {
   const img_hosting_token = import.meta.env.VITE_image_api;
   // const img_hosting_url = `https://api.imgbb.com/1/upload?expiration=600&key=${img_hosting_token}`;
   const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`;
-  console.log(img_hosting_token);
+  // console.log(img_hosting_token);
 
   const onSubmit = (data) => {
     console.log(data);
@@ -79,7 +79,7 @@ const AddEvent = () => {
             .then((res) => res.json())
             // eslint-disable-next-line no-unused-vars
             .then((data) => {
-              // console.log(data);
+              console.log(data);
               toast.success("Event Added");
             })
             .catch((err) => console.log(err.message));
@@ -212,6 +212,7 @@ const AddEvent = () => {
           <div className="form-control">
             <label className="label">Promotional Images/Videos</label>
             <input
+              required
               type="file"
               placeholder="Image URL"
               {...register("promotionalImages")}

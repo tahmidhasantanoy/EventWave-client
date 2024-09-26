@@ -10,8 +10,12 @@ const Profile = () => {
   console.log(currentUser?.email);
 
   const handleLogout = () => {
-    logOut().then((res) =>
-      console.log(res).catch((err) => console.log(err.message))
+    logOut().then(
+      ((res) => {
+        console.log(res);
+        console.log("logout");
+        localStorage.removeItem("EventWave-access-toke");
+      }).catch((err) => console.log(err.message))
     );
   };
 
